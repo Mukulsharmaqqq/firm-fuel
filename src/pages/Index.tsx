@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Hero from "@/components/calculator/Hero";
 import CalculatorForm from "@/components/calculator/CalculatorForm";
 import ResultsDashboard from "@/components/calculator/ResultsDashboard";
 import { CalculatorInputs, CalculatorResults } from "@/types/calculator";
@@ -23,10 +22,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {!showResults ? (
-        <>
-          <Hero />
-          <CalculatorForm onCalculate={handleCalculate} />
-        </>
+        <CalculatorForm onCalculate={handleCalculate} />
       ) : (
         results && <ResultsDashboard results={results} onReset={handleReset} />
       )}
