@@ -70,7 +70,7 @@ const FormStep1 = ({ form }: FormStep1Props) => {
               <div className="flex justify-between items-center mb-2">
                 <FormLabel className="text-sm font-normal">Simple Returns</FormLabel>
                 <span className="text-sm font-semibold text-foreground">
-                  {field.value}% ({Math.round((field.value / 100) * totalReturns)} returns)
+                  {field.value}% {totalReturns ? `(${Math.round((field.value / 100) * totalReturns)} returns)` : ''}
                 </span>
               </div>
               <FormControl>
@@ -94,7 +94,7 @@ const FormStep1 = ({ form }: FormStep1Props) => {
               <div className="flex justify-between items-center mb-2">
                 <FormLabel className="text-sm font-normal">Medium Returns</FormLabel>
                 <span className="text-sm font-semibold text-foreground">
-                  {field.value}% ({Math.round((field.value / 100) * totalReturns)} returns)
+                  {field.value}% {totalReturns ? `(${Math.round((field.value / 100) * totalReturns)} returns)` : ''}
                 </span>
               </div>
               <FormControl>
@@ -113,7 +113,7 @@ const FormStep1 = ({ form }: FormStep1Props) => {
         <div className="flex justify-between items-center pt-2 border-t border-border">
           <FormLabel className="text-sm font-normal">Complex Returns</FormLabel>
           <span className="text-sm font-semibold text-foreground">
-            {complexPercent}% ({Math.round((complexPercent / 100) * totalReturns)} returns)
+            {complexPercent}% {totalReturns ? `(${Math.round((complexPercent / 100) * totalReturns)} returns)` : ''}
           </span>
         </div>
       </div>
