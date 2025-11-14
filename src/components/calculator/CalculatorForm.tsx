@@ -43,20 +43,20 @@ const CalculatorForm = ({ onCalculate }: CalculatorFormProps) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      totalReturns: 300,
-      simplePercent: 50,
-      mediumPercent: 25,
-      complexPercent: 25,
-      simpleReturnPrice: 250,
+      totalReturns: undefined,
+      simplePercent: 33,
+      mediumPercent: 33,
+      complexPercent: 34,
+      simpleReturnPrice: undefined,
       hasAIIntake: false,
-      hasPMS: true,
-      hasStaffShortage: true,
-      simpleReturnHours: 1.5,
-      mediumReturnHours: 3.5,
-      complexReturnHours: 7.5,
-      reviewersReviewSimple: true,
+      hasPMS: false,
+      hasStaffShortage: false,
+      simpleReturnHours: undefined,
+      mediumReturnHours: undefined,
+      complexReturnHours: undefined,
+      reviewersReviewSimple: false,
       isStaffAITrained: false,
-      totalStaffCost: 46440,
+      totalStaffCost: undefined,
     },
   });
 
@@ -68,7 +68,7 @@ const CalculatorForm = ({ onCalculate }: CalculatorFormProps) => {
   const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
 
   return (
-    <section id="calculator" className="py-16 sm:py-24">
+    <section id="calculator" className="py-8 sm:py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-card rounded-2xl shadow-xl border border-border overflow-hidden">
           <div className="bg-gradient-to-r from-primary to-primary/90 px-8 py-6">
